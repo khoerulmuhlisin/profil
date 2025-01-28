@@ -6,8 +6,10 @@ body, h1, h2, h3, p, ul, li, blockquote {
 }
 
 body {
-    background-color: #f5f5f5;
-    color: #333;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 /* Container */
@@ -33,6 +35,12 @@ header {
     justify-content: center;
     gap: 20px;
     flex-wrap: wrap; /* Responsif untuk layar kecil */
+}
+
+header nav a {
+    text-decoration: none;
+    color: white;
+    margin-left: 20px;
 }
 
 .profile-photo {
@@ -152,6 +160,90 @@ nav a.active {
 
 .skill-card:hover .icon-container {
     transform: scale(1.2);
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1024px) {
+    .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .profile-photo {
+        width: 100px;
+        height: 100px;
+    }
+
+    header h1 {
+        font-size: 30px;
+    }
+
+    header p {
+        font-size: 16px;
+    }
+
+    .skills-gallery {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .header-content {
+        padding: 0 15px;
+    }
+
+    header h1 {
+        font-size: 28px;
+    }
+
+    .skills-gallery {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+
+    .section h2 {
+        font-size: 24px;
+    }
+
+    .skill-card {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-content {
+        padding: 0 10px;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .profile-photo {
+        width: 80px;
+        height: 80px;
+    }
+
+    .skills-gallery {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+
+    .skill-card {
+        padding: 15px;
+    }
+
+    .section h2 {
+        font-size: 20px;
+    }
 }
 
 /* Skill Card Text */
